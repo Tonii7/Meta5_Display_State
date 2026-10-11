@@ -33,7 +33,8 @@
       "delta_net_wow": -6098,
       "net_oi_pct": -22.87,
       "percentile_past_only": null,
-      "z_score_past_only": null
+      "z_score_past_only": null,
+      "wow_net_change": -6098
     },
     "asset_managers": {
       "long": 23215,
@@ -45,7 +46,8 @@
       "delta_net_wow": 4687,
       "net_oi_pct": 20.53,
       "percentile_past_only": null,
-      "z_score_past_only": null
+      "z_score_past_only": null,
+      "wow_net_change": 4687
     },
     "leveraged_funds": {
       "long": 13661,
@@ -57,7 +59,8 @@
       "delta_net_wow": 1289,
       "net_oi_pct": -4.36,
       "percentile_past_only": null,
-      "z_score_past_only": null
+      "z_score_past_only": null,
+      "wow_net_change": 1289
     },
     "other_reportables": {
       "long": 543,
@@ -69,7 +72,8 @@
       "delta_net_wow": 250,
       "net_oi_pct": 0.57,
       "percentile_past_only": null,
-      "z_score_past_only": null
+      "z_score_past_only": null,
+      "wow_net_change": 250
     },
     "nonreportable": {
       "long": 14282,
@@ -80,7 +84,8 @@
       "delta_net_wow": -128,
       "net_oi_pct": 6.13,
       "percentile_past_only": null,
-      "z_score_past_only": null
+      "z_score_past_only": null,
+      "wow_net_change": -128
     },
     "interpretation": {
       "level": "MIXED_ACROSS_PARTICIPANT_CLASSES",
@@ -89,6 +94,34 @@
       "extreme": "NOT_TESTED",
       "unwind": "NOT_TESTED",
       "crowding": "NOT_TESTED"
+    },
+    "report_date": "2026-10-06",
+    "publication_date": "2026-10-09",
+    "asset_manager": {
+      "long": 23215,
+      "short": 3593,
+      "spreading": 1412,
+      "net": 19622,
+      "delta_long_wow": 4373,
+      "delta_short_wow": -314,
+      "delta_net_wow": 4687,
+      "net_oi_pct": 20.53,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": 4687
+    },
+    "dealer": {
+      "long": 41603,
+      "short": 63457,
+      "spreading": 400,
+      "net": -21854,
+      "delta_long_wow": -151,
+      "delta_short_wow": 5947,
+      "delta_net_wow": -6098,
+      "net_oi_pct": -22.87,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": -6098
     }
   },
   "participant_features": {
@@ -161,7 +194,9 @@
     "high": null,
     "low": null,
     "bulletin": null,
-    "reason": "Legacy compatibility alias. Post-release contract-level YM observation is not currently verified."
+    "reason": "Legacy compatibility alias. Post-release contract-level YM observation is not currently verified.",
+    "structure": "MISSING",
+    "bulletin_status": "MISSING"
   },
   "current_alignment": "MIXED",
   "alignment_basis": "POSITIONING_ONLY_MARKET_RESPONSE_MISSING",
@@ -213,5 +248,10 @@
     "repository": "Tonii7/Meta5_Display_State",
     "branch": "main",
     "raw_url": "https://raw.githubusercontent.com/Tonii7/Meta5_Display_State/main/mcr/state/us30_positioning_latest.json"
+  },
+  "methodology_version": "COT_OI_RESEARCH_V2",
+  "compatibility": {
+    "cockpit_v1_aliases": true,
+    "note": "Legacy UI aliases only; null post-release market data remains null and is not fabricated."
   }
 }
