@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.1",
-  "methodology": "COT_OI_RESEARCH_V2",
-  "updated_at": "2026-10-10T18:53:00+05:00",
+  "schema_version": "1.2",
+  "methodology": "COT_OI_RESEARCH_V3",
+  "updated_at": "2026-10-11T10:50:00Z",
   "generated_at": "2026-10-10T18:53:00+05:00",
   "instrument": "US30/YM",
   "instrument_meta": {
@@ -122,7 +122,10 @@
       "percentile_past_only": null,
       "z_score_past_only": null,
       "wow_net_change": -6098
-    }
+    },
+    "report_type": "TRADERS_IN_FINANCIAL_FUTURES_FUTURES_ONLY",
+    "cftc_code": "124603",
+    "source_role": "PRIMARY_FINANCIAL_PARTICIPANT_DECOMPOSITION"
   },
   "participant_features": {
     "dealer_intermediary": {
@@ -233,10 +236,22 @@
   ],
   "sources": [
     {
+      "name": "CFTC Legacy Futures Only",
+      "url": "https://www.cftc.gov/dea/futures/deacbtsf.htm",
+      "role": "PRIMARY_LEGACY_SOURCE",
+      "scope": "DJIA x $5, CFTC code 124603, positions as of 2026-10-06"
+    },
+    {
       "name": "CFTC TFF Futures Only",
       "url": "https://www.cftc.gov/dea/futures/financial_lf.htm",
-      "role": "PRIMARY",
-      "scope": "CFTC code 124603, positions as of 2026-10-06"
+      "role": "PRIMARY_TFF_SOURCE",
+      "scope": "E-mini Dow / CFTC code 124603, positions as of 2026-10-06"
+    },
+    {
+      "name": "COT-Reports.com",
+      "url": "https://cot-reports.com/",
+      "role": "NORMALIZED_SECONDARY_CROSS_CHECK",
+      "scope": "Normalized presentation / operational cross-check; not research authority"
     }
   ],
   "handoff_status": "PUBLISHED_TO_PUBLIC_DISPLAY_REPO",
@@ -249,9 +264,247 @@
     "branch": "main",
     "raw_url": "https://raw.githubusercontent.com/Tonii7/Meta5_Display_State/main/mcr/state/us30_positioning_latest.json"
   },
-  "methodology_version": "COT_OI_RESEARCH_V2",
+  "methodology_version": "COT_OI_RESEARCH_V3",
   "compatibility": {
     "cockpit_v1_aliases": true,
-    "note": "Legacy UI aliases only; null post-release market data remains null and is not fabricated."
+    "note": "Legacy UI aliases only; Legacy and TFF remain separate; null post-release market data remains null and is not fabricated.",
+    "canonical_tff_alias": "cot_positioning",
+    "canonical_new_blocks": [
+      "legacy_positioning",
+      "tff_positioning",
+      "historical_normalization",
+      "positioning_cross_report"
+    ]
+  },
+  "contract_revision": {
+    "version": "POSITIONING_DUAL_REPORT_V1",
+    "updated_at": "2026-10-11T10:50:00Z",
+    "purpose": "Expose Legacy Futures Only and TFF Futures Only as separate, non-interchangeable positioning layers."
+  },
+  "tff_positioning": {
+    "status": "SPLIT",
+    "open_interest": 95576,
+    "open_interest_scope": "CFTC report total OI for code 124603; not a single-contract daily OI series",
+    "dealer_intermediary": {
+      "long": 41603,
+      "short": 63457,
+      "spreading": 400,
+      "net": -21854,
+      "delta_long_wow": -151,
+      "delta_short_wow": 5947,
+      "delta_net_wow": -6098,
+      "net_oi_pct": -22.87,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": -6098
+    },
+    "asset_managers": {
+      "long": 23215,
+      "short": 3593,
+      "spreading": 1412,
+      "net": 19622,
+      "delta_long_wow": 4373,
+      "delta_short_wow": -314,
+      "delta_net_wow": 4687,
+      "net_oi_pct": 20.53,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": 4687
+    },
+    "leveraged_funds": {
+      "long": 13661,
+      "short": 17828,
+      "spreading": 460,
+      "net": -4167,
+      "delta_long_wow": 4163,
+      "delta_short_wow": 2874,
+      "delta_net_wow": 1289,
+      "net_oi_pct": -4.36,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": 1289
+    },
+    "other_reportables": {
+      "long": 543,
+      "short": 0,
+      "spreading": 0,
+      "net": 543,
+      "delta_long_wow": 0,
+      "delta_short_wow": -250,
+      "delta_net_wow": 250,
+      "net_oi_pct": 0.57,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": 250
+    },
+    "nonreportable": {
+      "long": 14282,
+      "short": 8426,
+      "net": 5856,
+      "delta_long_wow": -1,
+      "delta_short_wow": 127,
+      "delta_net_wow": -128,
+      "net_oi_pct": 6.13,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": -128
+    },
+    "interpretation": {
+      "level": "MIXED_ACROSS_PARTICIPANT_CLASSES",
+      "flow": "ASSET_MANAGERS_ADDED_NET_LONG; DEALERS_ADDED_NET_SHORT; LEVERAGED_FUNDS_NET_SHORT_BUT_WEEKLY_NET_IMPROVED",
+      "shock": "NOT_CLASSIFIED_NO_PAST_ONLY_THRESHOLD_AVAILABLE",
+      "extreme": "NOT_TESTED",
+      "unwind": "NOT_TESTED",
+      "crowding": "NOT_TESTED"
+    },
+    "report_date": "2026-10-06",
+    "publication_date": "2026-10-09",
+    "asset_manager": {
+      "long": 23215,
+      "short": 3593,
+      "spreading": 1412,
+      "net": 19622,
+      "delta_long_wow": 4373,
+      "delta_short_wow": -314,
+      "delta_net_wow": 4687,
+      "net_oi_pct": 20.53,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": 4687
+    },
+    "dealer": {
+      "long": 41603,
+      "short": 63457,
+      "spreading": 400,
+      "net": -21854,
+      "delta_long_wow": -151,
+      "delta_short_wow": 5947,
+      "delta_net_wow": -6098,
+      "net_oi_pct": -22.87,
+      "percentile_past_only": null,
+      "z_score_past_only": null,
+      "wow_net_change": -6098
+    },
+    "report_type": "TRADERS_IN_FINANCIAL_FUTURES_FUTURES_ONLY",
+    "cftc_code": "124603",
+    "source_role": "PRIMARY_FINANCIAL_PARTICIPANT_DECOMPOSITION"
+  },
+  "legacy_positioning": {
+    "report_type": "LEGACY_FUTURES_ONLY",
+    "cftc_code": "124603",
+    "report_date": "2026-10-06",
+    "publication_date": "2026-10-09",
+    "open_interest": 95576,
+    "source_role": "SECONDARY_CROSS_CHECK_AND_CLASSIC_COMMERCIAL_NONCOMMERCIAL_VIEW",
+    "non_commercial": {
+      "long": 23625,
+      "short": 14134,
+      "spreading": 468,
+      "net": 9491,
+      "delta_long_wow": 1135,
+      "delta_short_wow": 1488,
+      "delta_spreading_wow": 251,
+      "delta_net_wow": -353,
+      "wow_net_change": -353,
+      "long_oi_pct": 24.7,
+      "short_oi_pct": 14.8,
+      "spreading_oi_pct": 0.5,
+      "net_oi_pct": 9.93
+    },
+    "commercial": {
+      "long": 57201,
+      "short": 72548,
+      "net": -15347,
+      "delta_long_wow": 6093,
+      "delta_short_wow": 5612,
+      "delta_net_wow": 481,
+      "wow_net_change": 481,
+      "long_oi_pct": 59.8,
+      "short_oi_pct": 75.9,
+      "net_oi_pct": -16.06
+    },
+    "nonreportable": {
+      "long": 14282,
+      "short": 8426,
+      "net": 5856,
+      "delta_long_wow": -1,
+      "delta_short_wow": 127,
+      "delta_net_wow": -128,
+      "wow_net_change": -128,
+      "long_oi_pct": 14.9,
+      "short_oi_pct": 8.8,
+      "net_oi_pct": 6.13
+    },
+    "interpretation": {
+      "rule": "LEGACY_AND_TFF_MUST_NOT_BE_MERGED_OR_MAPPED_ONE_TO_ONE",
+      "note": "Legacy Commercial/Non-Commercial/Nonreportable is a separate CFTC classification system and is displayed as its own cross-check."
+    }
+  },
+  "historical_normalization": {
+    "status": "PENDING_PAST_ONLY_HISTORY_LOAD",
+    "policy": "PAST_ONLY_NO_LOOKAHEAD",
+    "target_windows": [
+      "1Y",
+      "3Y",
+      "5Y"
+    ],
+    "measures": [
+      "net_percentile",
+      "net_oi_percentile",
+      "z_score",
+      "extreme_flag"
+    ],
+    "legacy": {
+      "commercial": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      },
+      "non_commercial": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      },
+      "nonreportable": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      }
+    },
+    "tff": {
+      "dealer_intermediary": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      },
+      "asset_manager_institutional": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      },
+      "leveraged_funds": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      },
+      "other_reportables": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      },
+      "nonreportable": {
+        "1Y": null,
+        "3Y": null,
+        "5Y": null
+      }
+    },
+    "reason": "Current weekly snapshot is verified; multi-year historical series has not yet been loaded into this state, so no percentile/z-score is fabricated."
+  },
+  "positioning_cross_report": {
+    "status": "AVAILABLE_SEPARATELY",
+    "legacy_view": "NON_COMMERCIAL_NET_LONG; COMMERCIAL_NET_SHORT; NONREPORTABLE_NET_LONG",
+    "tff_view": "ASSET_MANAGERS_NET_LONG; DEALERS_NET_SHORT; LEVERAGED_FUNDS_NET_SHORT",
+    "interpretation_policy": "DESCRIPTIVE_ONLY_UNTIL_TESTED",
+    "warning": "Do not infer equivalence between Legacy classes and TFF classes."
   }
 }
