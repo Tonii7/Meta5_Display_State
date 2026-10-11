@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta5.local/schemas/us30_positioning_v1_2.schema.json",
+  "title": "Meta5 US30/YM Positioning State v1.2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "methodology",
+    "updated_at",
+    "instrument",
+    "cftc_code",
+    "report_date",
+    "publication_date",
+    "legacy_positioning",
+    "tff_positioning",
+    "cot_positioning",
+    "historical_normalization",
+    "market_response",
+    "post_cot_structure",
+    "current_alignment",
+    "data_quality",
+    "research_status",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.2"
+    },
+    "methodology": {
+      "const": "COT_OI_RESEARCH_V3"
+    },
+    "methodology_version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "instrument": {
+      "type": "string"
+    },
+    "cftc_code": {
+      "const": "124603"
+    },
+    "report_date": {
+      "type": "string"
+    },
+    "publication_date": {
+      "type": "string"
+    },
+    "window_phase": {
+      "type": "string"
+    },
+    "blind_day": {
+      "type": "boolean"
+    },
+    "legacy_positioning": {
+      "type": "object",
+      "required": [
+        "report_type",
+        "cftc_code",
+        "report_date",
+        "open_interest",
+        "commercial",
+        "non_commercial",
+        "nonreportable"
+      ],
+      "properties": {
+        "report_type": {
+          "const": "LEGACY_FUTURES_ONLY"
+        },
+        "cftc_code": {
+          "const": "124603"
+        },
+        "report_date": {
+          "type": "string"
+        },
+        "publication_date": {
+          "type": "string"
+        },
+        "open_interest": {
+          "type": "number"
+        },
+        "commercial": {
+          "$ref": "#/$defs/legacyParticipant"
+        },
+        "non_commercial": {
+          "$ref": "#/$defs/legacyParticipant"
+        },
+        "nonreportable": {
+          "$ref": "#/$defs/legacyParticipant"
+        }
+      },
+      "additionalProperties": true
+    },
+    "tff_positioning": {
+      "type": "object",
+      "required": [
+        "report_type",
+        "cftc_code",
+        "report_date",
+        "open_interest"
+      ],
+      "properties": {
+        "report_type": {
+          "const": "TRADERS_IN_FINANCIAL_FUTURES_FUTURES_ONLY"
+        },
+        "cftc_code": {
+          "const": "124603"
+        },
+        "report_date": {
+          "type": "string"
+        },
+        "publication_date": {
+          "type": "string"
+        },
+        "open_interest": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": true
+    },
+    "cot_positioning": {
+      "type": "object",
+      "description": "Compatibility alias for TFF only; never Legacy.",
+      "additionalProperties": true
+    },
+    "historical_normalization": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "positioning_cross_report": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "market_response": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "post_cot_structure": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "current_alignment": {
+      "type": "string"
+    },
+    "data_quality": {
+      "enum": [
+        "HIGH",
+        "DEGRADED",
+        "LOW",
+        "INVALID"
+      ]
+    },
+    "research_status": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hypotheses_under_test": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "provenance": {
+      "type": [
+        "object",
+        "array",
+        "null"
+      ]
+    },
+    "handoff_status": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "legacyParticipant": {
+      "type": "object",
+      "required": [
+        "long",
+        "short",
+        "net",
+        "delta_net_wow",
+        "net_oi_pct"
+      ],
+      "properties": {
+        "long": {
+          "type": "number"
+        },
+        "short": {
+          "type": "number"
+        },
+        "spreading": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "net": {
+          "type": "number"
+        },
+        "delta_long_wow": {
+          "type": "number"
+        },
+        "delta_short_wow": {
+          "type": "number"
+        },
+        "delta_spreading_wow": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "delta_net_wow": {
+          "type": "number"
+        },
+        "wow_net_change": {
+          "type": "number"
+        },
+        "long_oi_pct": {
+          "type": "number"
+        },
+        "short_oi_pct": {
+          "type": "number"
+        },
+        "spreading_oi_pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "net_oi_pct": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
