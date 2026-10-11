@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.1",
+  "methodology": "COT_OI_RESEARCH_V2",
+  "updated_at": "2026-10-10T18:53:00+05:00",
+  "generated_at": "2026-10-10T18:53:00+05:00",
+  "instrument": "US30/YM",
+  "instrument_meta": {
+    "futures_symbol": "YM",
+    "contract_name": "E-mini Dow ($5)",
+    "exchange": "CBOT",
+    "cftc_code": "124603"
+  },
+  "cftc_code": "124603",
+  "report_type": "TRADERS_IN_FINANCIAL_FUTURES_FUTURES_ONLY",
+  "report_date": "2026-10-06",
+  "snapshot_date": "2026-10-06",
+  "publication_date": "2026-10-09",
+  "publication_timestamp": "2026-10-09T15:30:00-04:00",
+  "publication_status": "VERIFIED_SCHEDULE_AND_CURRENT_CFTC_REPORT",
+  "window_phase": "POST_RELEASE",
+  "blind_day": false,
+  "cot_positioning": {
+    "status": "SPLIT",
+    "open_interest": 95576,
+    "open_interest_scope": "CFTC report total OI for code 124603; not a single-contract daily OI series",
+    "dealer_intermediary": {
+      "long": 41603,
+      "short": 63457,
+      "spreading": 400,
+      "net": -21854,
+      "delta_long_wow": -151,
+      "delta_short_wow": 5947,
+      "delta_net_wow": -6098,
+      "net_oi_pct": -22.87,
+      "percentile_past_only": null,
+      "z_score_past_only": null
+    },
+    "asset_managers": {
+      "long": 23215,
+      "short": 3593,
+      "spreading": 1412,
+      "net": 19622,
+      "delta_long_wow": 4373,
+      "delta_short_wow": -314,
+      "delta_net_wow": 4687,
+      "net_oi_pct": 20.53,
+      "percentile_past_only": null,
+      "z_score_past_only": null
+    },
+    "leveraged_funds": {
+      "long": 13661,
+      "short": 17828,
+      "spreading": 460,
+      "net": -4167,
+      "delta_long_wow": 4163,
+      "delta_short_wow": 2874,
+      "delta_net_wow": 1289,
+      "net_oi_pct": -4.36,
+      "percentile_past_only": null,
+      "z_score_past_only": null
+    },
+    "other_reportables": {
+      "long": 543,
+      "short": 0,
+      "spreading": 0,
+      "net": 543,
+      "delta_long_wow": 0,
+      "delta_short_wow": -250,
+      "delta_net_wow": 250,
+      "net_oi_pct": 0.57,
+      "percentile_past_only": null,
+      "z_score_past_only": null
+    },
+    "nonreportable": {
+      "long": 14282,
+      "short": 8426,
+      "net": 5856,
+      "delta_long_wow": -1,
+      "delta_short_wow": 127,
+      "delta_net_wow": -128,
+      "net_oi_pct": 6.13,
+      "percentile_past_only": null,
+      "z_score_past_only": null
+    },
+    "interpretation": {
+      "level": "MIXED_ACROSS_PARTICIPANT_CLASSES",
+      "flow": "ASSET_MANAGERS_ADDED_NET_LONG; DEALERS_ADDED_NET_SHORT; LEVERAGED_FUNDS_NET_SHORT_BUT_WEEKLY_NET_IMPROVED",
+      "shock": "NOT_CLASSIFIED_NO_PAST_ONLY_THRESHOLD_AVAILABLE",
+      "extreme": "NOT_TESTED",
+      "unwind": "NOT_TESTED",
+      "crowding": "NOT_TESTED"
+    }
+  },
+  "participant_features": {
+    "dealer_intermediary": {
+      "long": 41603,
+      "short": 63457,
+      "spreading": 400,
+      "net": -21854,
+      "delta_net_wow": -6098,
+      "net_oi_pct": -22.87
+    },
+    "asset_manager_institutional": {
+      "long": 23215,
+      "short": 3593,
+      "spreading": 1412,
+      "net": 19622,
+      "delta_net_wow": 4687,
+      "net_oi_pct": 20.53
+    },
+    "leveraged_funds": {
+      "long": 13661,
+      "short": 17828,
+      "spreading": 460,
+      "net": -4167,
+      "delta_net_wow": 1289,
+      "net_oi_pct": -4.36
+    },
+    "other_reportables": {
+      "long": 543,
+      "short": 0,
+      "spreading": 0,
+      "net": 543,
+      "delta_net_wow": 250,
+      "net_oi_pct": 0.57
+    },
+    "nonreportable": {
+      "long": 14282,
+      "short": 8426,
+      "net": 5856,
+      "delta_net_wow": -128,
+      "net_oi_pct": 6.13
+    }
+  },
+  "market_response": {
+    "status": "MISSING",
+    "observation_date": null,
+    "contract_month": null,
+    "roll_status": null,
+    "bulletin_status": null,
+    "price_delta_pct": null,
+    "oi_delta_pct": null,
+    "volume": null,
+    "volume_vs_20d_mean": null,
+    "settlement": null,
+    "high": null,
+    "low": null,
+    "clv": null,
+    "reason": "Verified CME individual-contract YM daily price/volume/open-interest series is not available in the current research state."
+  },
+  "post_cot_structure": {
+    "status": "MISSING",
+    "observation_date": null,
+    "open_interest": null,
+    "oi_delta_pct": null,
+    "oi_since_cot_pct": null,
+    "price_delta_pct": null,
+    "clv": null,
+    "volume": null,
+    "settlement": null,
+    "high": null,
+    "low": null,
+    "bulletin": null,
+    "reason": "Legacy compatibility alias. Post-release contract-level YM observation is not currently verified."
+  },
+  "current_alignment": "MIXED",
+  "alignment_basis": "POSITIONING_ONLY_MARKET_RESPONSE_MISSING",
+  "data_quality": "DEGRADED",
+  "data_quality_details": {
+    "cftc_identity": "VERIFIED",
+    "report_date": "VERIFIED",
+    "tff_futures_only": "VERIFIED",
+    "no_lookahead": "PASS",
+    "market_response_contract_identity": "MISSING",
+    "past_only_history_for_percentile_zscore": "NOT_LOADED_IN_THIS_STATE",
+    "stage6b": "BLOCKED_PARTIAL"
+  },
+  "research_status": {
+    "stage_0_to_5": "COMPLETE",
+    "stage_6a": "COMPLETE",
+    "stage_6b": "BLOCKED_PARTIAL",
+    "stage_6c": "NOT_OPENED",
+    "predictive_edge": "UNCONFIRMED"
+  },
+  "hypotheses_under_test": {
+    "continuation": "NOT_TESTED",
+    "exhaustion": "NOT_TESTED",
+    "reversal": "NOT_TESTED",
+    "volatility_tail": "NOT_TESTED",
+    "extreme_x_unwind": "TEST_PENDING_YM_OOS"
+  },
+  "limitations": [
+    "COT snapshot is Tuesday positioning and became public only after the verified Friday release window.",
+    "COT open interest is report-level OI and must not be treated as a specific YM contract daily OI observation.",
+    "No Buy/Sell inference is permitted from this state.",
+    "Post-release market-structure fields remain null until verified CME contract-level data is available.",
+    "Percentiles, z-scores, shock, extreme, unwind and crowding are not classified here without the required past-only history."
+  ],
+  "sources": [
+    {
+      "name": "CFTC TFF Futures Only",
+      "url": "https://www.cftc.gov/dea/futures/financial_lf.htm",
+      "role": "PRIMARY",
+      "scope": "CFTC code 124603, positions as of 2026-10-06"
+    }
+  ],
+  "handoff_status": "PUBLISHED_TO_PUBLIC_DISPLAY_REPO",
+  "display_layer_contract": {
+    "terminal": "Gemini AI Studio US30 Positioning Cockpit",
+    "mode": "DISPLAY_LAYER_ONLY",
+    "canonical_path": "mcr/state/us30_positioning_latest.json",
+    "compatibility": "Includes legacy aliases used by the current cockpit plus research-grade v2 fields.",
+    "repository": "Tonii7/Meta5_Display_State",
+    "branch": "main",
+    "raw_url": "https://raw.githubusercontent.com/Tonii7/Meta5_Display_State/main/mcr/state/us30_positioning_latest.json"
+  }
+}
